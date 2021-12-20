@@ -7,12 +7,12 @@
     -webkit-user-drag: none;
 }
 
-:root {
-    --backgroundColor: black;
+body {
+    height: 100%;
 }
 
-.incercare {
-    display: none;
+:root {
+    --backgroundColor: black;
 }
 
 .cursor {
@@ -27,7 +27,7 @@
 }
 
 
-/*Nav Bar*/
+/* Nav Bar */
 header {
     opacity: 0;
     width: 100%;
@@ -74,7 +74,7 @@ header {
     transform: scaleX(1);
 }
 
-/*Apply styles after scroll*/
+/* Apply styles after scroll */
 .scrollingActive {
     background-color: black;
     box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
@@ -85,7 +85,7 @@ header {
 }
 
 
-/*Stars Background*/
+/* White with Title Background */
 .heroWallpaper {
     height: 100vh;
     display: block;
@@ -94,8 +94,6 @@ header {
     overflow: hidden;
 }
 
-
-/*Hero Title*/
 #title {
     position: absolute;
     top: 50%;
@@ -117,9 +115,10 @@ header {
 }
 
 
-/*Hero Content*/
+/* Hero Content */
 .heroContent {
-    height: 100%;
+    min-height: 100vh;
+    display: block;
     background: black;
     color: white;
     text-align: center;
@@ -128,88 +127,25 @@ header {
 }
 
 
-
-/*Responsive*/
-@media screen and (max-width: 1024px) {
-    
-}
-
-@media screen and (max-width: 768px) {
-    #title {
-        font-size: 75px;
+/* Mobile Responsive */
+@media screen and (max-width: 1280px) {
+    * {
+        cursor: auto;
     }
     
-    .nav {
-        height: 5rem;
-        display: flex;
-        align-items: center;
-        margin: 0 50px;
-    }
-    
-    .nav-list {
+    .cursor {
         display: none;
     }
 
-    .navLink:after {
-        display: none;
-    }
-    
-    .burger {
-        display: block;
-    }
 
-    .incercare {
-        width: 100%;
-        height: 50%;
-        position: fixed;
-        bottom: 0;
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        transform: translateY(100%);
-        transition: transform 0.5s ease-in;
-        background-color: rgba(48, 48, 48, 0.5);
-        box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(4px);
-    }
-    
-    .incercare li {
-        opacity: 1;
-        list-style: none;
-        padding: 50px 0;
-    }
-    
-    .incercare a {
-        text-decoration: none;
-        font-weight: bold;
-        color: #fff;
-        font-size: 2rem;
-        font-family: 'Poppins';
-        letter-spacing: 2px;
-    }
-    
-    .incercare-activ {
-        transform: translateY(0%);
+    /*Hero Title*/
+    #title p {
+        font-size: 130px;
     }
 }
 
 
-
-
-
-.toggle .line1 {
-    transform: rotate(-45deg) translate(-3.5px, 5px);
-}
-
-.toggle .line2 {
-    transform: rotate(45deg) translate(-3.5px, -5px);
-}
-
-
-
-/*Animations*/
+/* Animations */
 @keyframes navLinkFade {
     from {
         opacity: 0;

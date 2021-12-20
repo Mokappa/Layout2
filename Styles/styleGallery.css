@@ -41,7 +41,7 @@
 }
 
 .search-input {
-    width: 700px;
+    width: 40%;
 }
 
 .search-input input {
@@ -68,7 +68,7 @@
  
 .autocom-box {
     position: absolute;
-    background: black;
+    background: #181818;
     display: flex;
     flex-direction: column;
     width: inherit;
@@ -110,12 +110,15 @@
 
 
 .imageBoxGallery {
-    width: 1200px;
-    height: 700px;
-    background: #313131;
+    width: 70%;
+    height: 80vh;
     box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
     margin: 0 auto;
     position: relative;
+    background: url('../Images/Gallery/GradientReset.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background 0.2s ease;
 }
 
 .madeByWho {
@@ -123,8 +126,8 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 50%);
-    height: 75px;
-    width: 300px;
+    height: 10%;
+    width: 30%;
     background: #212121;
     border-radius: 12px;
     display: flex;
@@ -140,9 +143,40 @@
 }
 
 
+
+
+
+@media screen and (max-width: 1280px) {
+    .lineGallery {
+        height: 3px;
+        width: 200px;
+    }
+    
+    .search-input {
+        width: 55%;
+    }
+    
+    .search-input input {
+        font-size: 30px;
+    }
+    
+    .imageBoxGallery {
+        width: 90%;
+        height: 50vh;
+        background-size: 100% 100%;
+    }
+    
+    .madeByWho p {
+        font-size: 15px;
+    }
+    
+}
+
+
+/*  */
 @keyframes moveRight {
     from {
-
+        left: -60%;
     }
 
     to {

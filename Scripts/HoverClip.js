@@ -6,7 +6,6 @@ window.addEventListener('mousemove', function (e) {
     let positionCircle = circleClipPath.getBoundingClientRect()
     if(e.pageX > offset(ontopOf).left && e.pageY > offset(ontopOf).top && e.pageX < (offset(ontopOf).left + ontopOf.offsetWidth) && e.pageY < (offset(ontopOf) .top + ontopOf.offsetHeight)) {
         circleClipPath.style.opacity = '1'
-        console.log(positionCircle.left, positionCircle.top)
         circleClipPath.style.clipPath = `circle(170px at ${e.pageX - positionCircle.left}px ${e.clientY - positionCircle.top}px)`
         
         cursor.style.height = '0'
@@ -19,7 +18,6 @@ window.addEventListener('mousemove', function (e) {
         cursor.style.height = '25px'
         cursor.style.width = '25px'
     }
-
 })
 
 

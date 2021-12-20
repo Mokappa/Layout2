@@ -1,4 +1,4 @@
-const slider = document.querySelector('.swiperTeamSlides')
+let slider = document.querySelector('.swiperTeamSlides')
 let isDown = false
 let startX
 let scrollLeft
