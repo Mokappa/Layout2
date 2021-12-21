@@ -1,7 +1,7 @@
 let suggestions = ['Smn1', 'Smn2', 'Smn3', 'Smn4', 'Smn5', 'Smn6', 'Smn7', 'Smn8', 'Smn9', 'Smn10', 'Smn11', 'Smn12' ]
-let searchWrapper = document.querySelector('.search-input')
+let searchWrapper = document.querySelector('.searchInput')
 let inputBox = searchWrapper.querySelector('input')
-let suggBox = searchWrapper.querySelector('.autocom-box')
+let suggBox = searchWrapper.querySelector('.autocompleteBox')
 
 inputBox.addEventListener('keyup', function (e) {
     let userData = inputBox.value
@@ -13,7 +13,6 @@ inputBox.addEventListener('keyup', function (e) {
                 if(data.toLocaleLowerCase().indexOf(userData[i].toLocaleLowerCase()) < 0) {
                     return false
                 }
-
             }
 
             return true
@@ -88,7 +87,7 @@ function focusFunction() {
 }
 
 document.querySelector('.heroContent').addEventListener('click', function(event) {
-    if(!(event.target.parentNode.className === 'search-input active' || event.target.parentNode.className === 'autocom-box')) {
+    if(!(event.target.parentNode.className === 'searchInput active' || event.target.parentNode.className === 'autocompleteBox')) {
         searchWrapper.classList.remove('active')
     }
 })

@@ -1,4 +1,4 @@
-/*  */
+/* Lines Moving at the start of the page */
 .lineWallOn {
     position: absolute;
     left: -60%;
@@ -30,7 +30,7 @@
 }
 
 
-/*  */
+/* Box with Image and Text */
 .boxShadowOn {
     position: absolute;
     top: 0;
@@ -73,7 +73,7 @@
 }
 
 
-/*  */
+/* Box only with Text */
 #boxOnlyText {
     margin: 470px 200px 0 200px;
     display: flex;
@@ -89,7 +89,7 @@
 }
 
 
-/*  */
+/* Box only with Image */
 #boxOnlyImage {
     position: relative;
     margin-top: 470px;
@@ -110,7 +110,7 @@
 }
 
 
-/*  */
+/* Last Box with Text */
 #boxOnlyText2 {
     margin-top: 470px;
     display: flex;
@@ -136,15 +136,16 @@
 }
 
 
-/*  */
+/* Mobile Responsive */
 @media screen and (max-width: 1280px) {
+    /* Lines Moving at the start of the page */
     .lineWallOn {
         height: 3px;
         width: 200px;
     }
     
 
-    /*  */
+    /* Box with Image and Text */
     .boxShadowOn {
         height: 100%;
         width: 100%;
@@ -175,7 +176,7 @@
     }
     
 
-    /*  */
+    /* Box only with Text */
     #boxOnlyText {
         margin: 370px 50px 0 50px;
     }
@@ -185,7 +186,7 @@
     }
     
 
-    /*  */
+    /* Box only with Image */
     #boxOnlyImage {
         margin-top: 370px;
     }
@@ -196,7 +197,7 @@
     }
     
 
-    /*  */
+    /* Last Box with Text */
     #boxOnlyText2 {
         margin: 370px 50px 0 50px;
     }
@@ -207,7 +208,7 @@
 }
 
 
-/*  */
+/* Animations */
 @keyframes moveRight {
     from {
         left: -60%;

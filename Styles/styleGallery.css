@@ -1,3 +1,4 @@
+/* Lines Moving at the start of the page */
 .lineGallery {
     position: absolute;
     left: -60%;
@@ -30,7 +31,7 @@
 
 
 
-
+/* Search Input with Autocomplete Box */
 .wrapper {
     width: 100%;
     padding-top: 350px;
@@ -40,11 +41,11 @@
     
 }
 
-.search-input {
+.searchInput {
     width: 40%;
 }
 
-.search-input input {
+.searchInput input {
     background: black;
     height: 100px;
     width: 100%;
@@ -62,11 +63,12 @@
     position: relative;
 }
 
-.search-input input::placeholder {
+.searchInput input::placeholder {
     color: #2D2D2D;
 }
- 
-.autocom-box {
+
+ /* Autocomplete Box */
+.autocompleteBox {
     position: absolute;
     background: #181818;
     display: flex;
@@ -83,7 +85,7 @@
     scrollbar-width: none; /* Firefox */
 }
 
-.autocom-box li {
+.autocompleteBox li {
     list-style: none;
     margin: 0;
     padding: 8px 0;
@@ -91,24 +93,24 @@
     display: none;
 }
 
-.autocom-box li:hover {
+.autocompleteBox li:hover {
     background: #242424;
 }
 
-.autocom-box::-webkit-scrollbar { 
+.autocompleteBox::-webkit-scrollbar { 
     display: none;
 }
 
-.search-input.active .autocom-box{
+.searchInput.active .autocompleteBox{
     padding: 10px 0;
     max-height: 300px;
 }
 
-.search-input.active .autocom-box li {
+.searchInput.active .autocompleteBox li {
     display: block;
 }
 
-
+/* Changing Image Box */
 .imageBoxGallery {
     width: 70%;
     height: 80vh;
@@ -121,6 +123,7 @@
     transition: background 0.2s ease;
 }
 
+/* Made by Who box */
 .madeByWho {
     position: absolute;
     bottom: 0;
@@ -143,29 +146,32 @@
 }
 
 
-
-
-
+/* Mobile Responsive */
 @media screen and (max-width: 1280px) {
+    /* Lines Moving at the start of the page */
     .lineGallery {
         height: 3px;
         width: 200px;
     }
     
-    .search-input {
+
+    /* Search Input with Autocomplete Box */
+    .searchInput {
         width: 55%;
     }
     
-    .search-input input {
+    .searchInput input {
         font-size: 30px;
     }
     
+    /* Changing Image Box */
     .imageBoxGallery {
         width: 90%;
         height: 50vh;
         background-size: 100% 100%;
     }
     
+    /* Made by Who box */
     .madeByWho p {
         font-size: 15px;
     }
@@ -173,7 +179,7 @@
 }
 
 
-/*  */
+/* Animations */
 @keyframes moveRight {
     from {
         left: -60%;

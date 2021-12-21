@@ -22,6 +22,8 @@ body {
     background: black;
 }
 
+
+/* Go Back Text */
 .goBackBox {
     width: 200px;
     position: absolute;
@@ -53,6 +55,7 @@ body {
     animation: goLeftRight 1s infinite alternate;
 }
 
+/* Div Photo + Div Text Wrapper */
 .photoAndTextWraper {
     margin: 350px 0;
     display: flex;
@@ -60,6 +63,7 @@ body {
     align-items: center;
 }
 
+/* Div with Photo */
 .photoBox {
     height: 800px;
     width: 400px;
@@ -79,6 +83,7 @@ body {
     fill: #181818;
 }
 
+/* Div with Text and SVG */
 .textWithLinksBox {
     margin-left: -100px;
     height: 500px;
@@ -125,6 +130,8 @@ body {
     filter: drop-shadow(0 0 2px #E3E3E3);
 }
 
+
+/* Grid Image Gallery */
 .gridProjects {
     display: grid;
     grid-template-rows: repeat(3, 300px);
@@ -176,7 +183,7 @@ body {
 }
 
 
-/*  */
+/* Mobile Responsive */
 @media screen and (max-width: 1280px) {
     * {
         cursor: auto;
@@ -186,6 +193,8 @@ body {
         display: none;
     }
 
+
+    /* Go Back Text */
     .goBackBox {
         width: 200px;
         position: absolute;
@@ -220,12 +229,14 @@ body {
         animation: goLeftRight 1s infinite alternate;
     }
     
+    /* Div Photo + Div Text Wrapper */
     .photoAndTextWraper {
         margin: 350px 50px 700px 50px;
         flex-direction: column;
         position: relative;
     }
     
+    /* Div with Photo */
     .photoBox {
         height: 125px;
         width: 125px;
@@ -237,6 +248,7 @@ body {
         width: 75px;
     }
     
+    /* Div with Text and SVG */
     .textWithLinksBox {
         margin-left: 0px;
         height: 500px;
@@ -265,6 +277,8 @@ body {
         width: 20px;
     }
     
+
+    /* Grid Image Gallery */
     .gridProjects {
         grid-template-rows: repeat(14, 75px);
         grid-template-columns: repeat(4, 75px);
@@ -293,7 +307,7 @@ body {
 }
 
 
-/*  */
+/* Animations */
 @keyframes goLeftRight {
     0% {
         margin-left: 0;

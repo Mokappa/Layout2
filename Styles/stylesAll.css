@@ -138,11 +138,13 @@ header {
     }
 
 
+    /* Nav Bar */
     .navLink {
         margin: 0 20px;
         font-size: 30px;
     }
 
+    
     /*Hero Title*/
     #title p {
         font-size: 110px;
