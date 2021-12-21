@@ -164,6 +164,10 @@
         height: 500px;
         width: 300px;
     }
+
+    #imageBackground2 {
+        transition: all 0.75s ease;
+    }
     
     #boxImageWithText p {
         font-size: 30px;
@@ -194,7 +198,7 @@
 
     /*  */
     #boxOnlyText2 {
-        margin-top: 370px;
+        margin: 370px 50px 0 50px;
     }
 
     #boxOnlyText2 p {

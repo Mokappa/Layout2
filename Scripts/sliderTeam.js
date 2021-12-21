@@ -5,42 +5,59 @@ let scrollLeft
 
 slider.scrollLeft = (Math.floor(slider.scrollWidth / 2) - Math.floor(slider.offsetWidth / 2))
 
-slider.addEventListener('mousedown', function (e) {
-    isDown = true
 
-    startX = e.pageX
-    scrollLeft = slider.scrollLeft
-})
+if(deviceType() === 'table' || deviceType() === 'mobile') {
+    window.addEventListener('touchstart', function (e) {
+        if(e.target.parentNode.className !== 'swiperTeamSlides' && e.target.parentNode.className !== 'swiperSlide' && e.target.parentNode.className !== 'svgFlex' && e.target.parentNode.className.animVal !== 'svgFlexChild') {
+            setTimeout(function () {
+                slider.scrollTo({
+                    left: (Math.floor(slider.scrollWidth / 2) - Math.floor(slider.offsetWidth / 2)),
+                    behavior: 'smooth'
+                })
+            }, 500)
+        }
+    })
 
-slider.addEventListener('mouseup', function () {
-    isDown = false
-})
+}
+else {
+    slider.addEventListener('mousedown', function (e) {
+        isDown = true
+    
+        startX = e.pageX
+        scrollLeft = slider.scrollLeft
+    })
+    
+    slider.addEventListener('mouseup', function () {
+        isDown = false
+    })
+    
+    slider.addEventListener('mouseenter', function () {
+        cursorId.classList.remove('cursor')
+    })
+    
+    slider.addEventListener('mouseleave', function () {
+        cursorId.classList.add('cursor')
+    
+        isDown = false
+    
+        setTimeout(function () {
+            slider.scrollTo({
+                left: (Math.floor(slider.scrollWidth / 2) - Math.floor(slider.offsetWidth / 2)),
+                behavior: 'smooth'
+            })
+        }, 500)
+    })
+    
+    slider.addEventListener('mousemove', function (e) {
+        if(!isDown) {
+            return
+        }
+    
+        e.preventDefault()
+    
+        let x = e.pageX - slider.offsetLeft
+    
+        slider.scrollLeft = scrollLeft - (x - startX)
+    })
+}
 
-slider.addEventListener('mouseenter', function () {
-    cursorId.classList.remove('cursor')
-})
-
-slider.addEventListener('mouseleave', function () {
-    cursorId.classList.add('cursor')
-
-    isDown = false
-
-    setTimeout(function () {
-        slider.scrollTo({
-            left: (Math.floor(slider.scrollWidth / 2) - Math.floor(slider.offsetWidth / 2)),
-            behavior: 'smooth'
-        })
-    }, 500)
-})
-
-slider.addEventListener('mousemove', function (e) {
-    if(!isDown) {
-        return
-    }
-
-    e.preventDefault()
-
-    let x = e.pageX - slider.offsetLeft
-
-    slider.scrollLeft = scrollLeft - (x - startX)
-})

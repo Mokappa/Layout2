@@ -2,8 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-anchor: none;
     cursor: none;
+    -webkit-user-drag: none;
+    user-select: none;
 }
 
 .cursor {
@@ -116,6 +117,8 @@ body {
 .svgFlex svg {
     transition: filter 0.25s ease;
     fill: #E3E3E3;
+    height: 25px;
+    width: 25px;
 }
 
 .svgFlex svg:hover {
@@ -176,34 +179,22 @@ body {
 /*  */
 @media screen and (max-width: 1280px) {
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow-anchor: none;
-        cursor: none;
+        cursor: auto;
     }
     
     .cursor {
-        position: fixed;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        background: white;
-        mix-blend-mode: difference;
-        transition: opacity 0.2s;
-        z-index: 999;
+        display: none;
     }
-    
-    body {
-        background: black;
-    }
-    
+
     .goBackBox {
         width: 200px;
         position: absolute;
-        left: 5%;
+        top: -150%;
+        left: 50%;
+        transform: translate(-50%, 0);
         display: flex;
         flex-direction: column;
+        z-index: 999;
     }
     
     .goBackBox p {
@@ -230,123 +221,74 @@ body {
     }
     
     .photoAndTextWraper {
-        margin: 350px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin: 350px 50px 700px 50px;
+        flex-direction: column;
+        position: relative;
     }
     
     .photoBox {
-        height: 800px;
-        width: 400px;
-        background: black;
-        border: 5px solid #757575;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-        border-radius: 50px;
-        z-index: 99;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: 125px;
+        width: 125px;
+        border-radius: 50%;
     }
     
     .photoBox svg {
-        height: 200px;
-        width: 200px;
-        fill: #181818;
+        height: 75px;
+        width: 75px;
     }
     
     .textWithLinksBox {
-        margin-left: -100px;
+        margin-left: 0px;
         height: 500px;
-        width: 900px;
-        background: #313131;
-        border-radius: 50px;
-        position: relative;
-        box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
+        width: 300px;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
     }
     
     .textWithLinksBox p {
-        color: #9D9D9D;
-        font-family: 'Indie Flower', cursive;
-        font-size: 50px;
-        margin: 50px 0;
-        text-align: center;
+        font-size: 40px;
+        margin: 75px 0 50px 0;
     }
     
     .textWithLinksBox ul li {
-        color: #9D9D9D;
-        font-size: 30px;
-        font-family: 'Indie Flower', cursive;
-        margin-left: 200px;
+        font-size: 20px;
+        margin: 0 50px;
     }
     
     .svgFlex {
-        position: absolute;
-        bottom: 5%;
-        left: 50%;
-        transform: translate(-50%, 0);
-        display: grid;
-        grid-gap: 30px;
-        grid-template-columns: repeat(4, 25px);
+        grid-gap: 15px;
     }
     
     .svgFlex svg {
-        transition: filter 0.25s ease;
-        fill: #E3E3E3;
-    }
-    
-    .svgFlex svg:hover {
-        filter: drop-shadow(0 0 2px #E3E3E3);
+        height: 20px;
+        width: 20px;
     }
     
     .gridProjects {
-        display: grid;
-        grid-template-rows: repeat(3, 300px);
-        grid-template-columns: repeat(5, 300px);
-        grid-gap: 20px;
-        justify-content: center;
-        margin-bottom: 350px;
+        grid-template-rows: repeat(14, 75px);
+        grid-template-columns: repeat(4, 75px);
+        grid-gap: 10px;
     }
-    
+
     .largeImage {
-        box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
-        grid-row: span 2;
-        grid-column: span 2;
-    }
-    
-    .largeImage:nth-child(1) {
-        background: url('../Images/IllusG1.jpg');
-        background-size: 100% 100%;
-    }
-    
-    .largeImage:nth-child(4) {
-        background: url('../Images/IllusG4.jpg');
-        background-size: cover;
+        grid-row: span 4;
+        grid-column: span 4;
     }
     
     .longImage {
-        box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
-        grid-row: span 1;
-        grid-column: span 3;
+        grid-row: span 2;
+        grid-column: span 4;
     }
-    
-    .longImage:nth-child(2) {
-        background: url('../Images/IllusG2.jpg');
-        background-size: 100% 100%;
-    }
-    
+
     .longImage:nth-child(5) {
-        background: url('../Images/IllusG5.png');
-        background-size: 100% 100%;
+        grid-row: 9 / span 2;
+        grid-column: span 4;
     }
     
     .squareImage {
-        box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
-        grid-row: span 1;
-        grid-column: span 1;
-        background: url('../Images/IllusG3.jpg');
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
+        grid-row: 7 / span 2;
+        grid-column: 2 / 4;
     }
 }
 

@@ -2,9 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-anchor: none;
     cursor: none;
     -webkit-user-drag: none;
+    user-select: none;
 }
 
 body {
@@ -138,9 +138,14 @@ header {
     }
 
 
+    .navLink {
+        margin: 0 20px;
+        font-size: 30px;
+    }
+
     /*Hero Title*/
     #title p {
-        font-size: 130px;
+        font-size: 110px;
     }
 }
 
