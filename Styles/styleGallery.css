@@ -1,0 +1,191 @@
+/* Lines Moving at the start of the page */
+.lineGallery {
+    position: absolute;
+    left: -60%;
+    height: 5px;
+    width: 500px;
+    background: linear-gradient(to right, transparent, black);
+    border-radius: 50%;
+    z-index: 99;
+}
+
+.lineGallery:nth-child(1) {
+    top: 35%;
+    animation: moveRight 0.5s forwards 1.75s;
+}
+
+.lineGallery:nth-child(2) {
+    top: 40%;
+    animation: moveRight 0.5s forwards 1s;
+}
+
+.lineGallery:nth-child(3) {
+    top: 55%;
+    animation: moveRight 0.5s forwards 1.45s;
+}
+
+.lineGallery:nth-child(4) {
+    top: 60%;
+    animation: moveRight 0.5s forwards 1.25s;
+}
+
+
+
+/* Search Input with Autocomplete Box */
+.wrapper {
+    width: 100%;
+    padding-top: 350px;
+    padding-bottom: 160px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.searchInput {
+    width: 40%;
+}
+
+.searchInput input {
+    background: black;
+    height: 100px;
+    width: 100%;
+    font-size: 40px;
+    font-family: 'Indie Flower', cursive;
+    color: #757575;
+    border: 5px solid;
+    border-image: linear-gradient(to top, transparent 0%, #757575 3%);
+    border-image-slice: 1;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    outline: none;
+    text-align: center;
+    position: relative;
+}
+
+.searchInput input::placeholder {
+    color: #2D2D2D;
+}
+
+ /* Autocomplete Box */
+.autocompleteBox {
+    position: absolute;
+    background: #181818;
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+    max-height: 0;
+    overflow-y: auto;
+    font-size: 30px;
+    font-family: 'Indie Flower', cursive;
+    color: #757575;
+    transition: max-height 0.25s ease;
+    z-index: 99;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    scrollbar-width: none; /* Firefox */
+}
+
+.autocompleteBox li {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    width: 100%;
+    display: none;
+}
+
+.autocompleteBox li:hover {
+    background: #242424;
+}
+
+.autocompleteBox::-webkit-scrollbar { 
+    display: none;
+}
+
+.searchInput.active .autocompleteBox{
+    padding: 10px 0;
+    max-height: 300px;
+}
+
+.searchInput.active .autocompleteBox li {
+    display: block;
+}
+
+/* Changing Image Box */
+.imageBoxGallery {
+    width: 70%;
+    height: 80vh;
+    box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    position: relative;
+    background: url('../Images/Gallery/GradientReset.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background 0.2s ease;
+}
+
+/* Made by Who box */
+.madeByWho {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    height: 10%;
+    width: 30%;
+    background: #212121;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.madeByWho p {
+    font-size: 30px;
+    font-family: 'Indie Flower', cursive;
+    color: #E3E3E3;
+}
+
+
+/* Mobile Responsive */
+@media screen and (max-width: 1280px) {
+    /* Lines Moving at the start of the page */
+    .lineGallery {
+        height: 3px;
+        width: 200px;
+    }
+    
+
+    /* Search Input with Autocomplete Box */
+    .searchInput {
+        width: 55%;
+    }
+    
+    .searchInput input {
+        font-size: 30px;
+    }
+    
+    /* Changing Image Box */
+    .imageBoxGallery {
+        width: 90%;
+        height: 50vh;
+        background-size: 100% 100%;
+    }
+    
+    /* Made by Who box */
+    .madeByWho p {
+        font-size: 15px;
+    }
+    
+}
+
+
+/* Animations */
+@keyframes moveRight {
+    from {
+        left: -60%;
+    }
+
+    to {
+        left: 140%;
+    }
+}

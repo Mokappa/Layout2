@@ -1,0 +1,276 @@
+/* Lines Moving at the start of the page */
+.lineAbout {
+    position: absolute;
+    left: -60%;
+    height: 5px;
+    width: 500px;
+    background: linear-gradient(to right, transparent, black);
+    border-radius: 50%;
+    z-index: 99;
+}
+
+.lineAbout:nth-child(1) {
+    top: 45%;
+    animation: moveRight 0.5s forwards 1.35s;
+}
+
+.lineAbout:nth-child(2) {
+    top: 50%;
+    animation: moveRight 0.5s forwards 0.75s;
+}
+
+.lineAbout:nth-child(3) {
+    top: 70%;
+    animation: moveRight 0.5s forwards 1.25s;
+}
+
+.lineAbout:nth-child(4) {
+    top: 75%;
+    animation: moveRight 0.5s forwards 1.75s;
+}
+
+
+/* Box only with Text */
+#boxOnlyText {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 200px;
+    padding-top: 350px;
+}
+
+#boxOnlyText p {
+    font-size: 35px;
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    color: #B8B8B8;
+}
+
+
+/* Team Info Slider */
+/* I had to put cursor style everywhere because of the custom cursor */
+.swiperTeamSlides {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: flex-end;
+    grid-gap: 15%;
+    overflow-x: scroll;
+    width: 100%;
+    height: 575px;
+    margin: 470px 0;
+    scrollbar-width: none; /* Firefox */
+    cursor: default;
+}
+
+.swiperTeamSlides::-webkit-scrollbar {
+    display: none;
+}
+
+.swiperSlide {
+    border-radius: 25px;
+    background: #313131;
+    box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    height: 500px;
+    width: 400px;
+    position: relative;
+    padding: 0 50px;
+    cursor: default;
+}
+
+.swiperSlide:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+    border: 5px solid grey;
+    background: black;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.swiperSlide p:nth-child(1) {
+    padding-top: 100px;
+    font-size: 40px;
+    font-family: 'Indie Flower', cursive;
+    color: #9D9D9D;
+    cursor: default;
+}
+
+.swiperSlide p:nth-child(2) {
+    font-size: 50px;
+    font-family: 'Indie Flower', cursive;
+    color: #E3E3E3;
+    cursor: default;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.svgFlex {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, 25px);
+    cursor: default;
+}
+
+.svgFlex svg {
+    transition: filter 0.25s ease;
+    fill: #E3E3E3;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+}
+
+.svgFlex path {
+    cursor: pointer;
+}
+
+.svgFlex svg:hover {
+    filter: drop-shadow(0 0 2px #E3E3E3);
+}
+
+
+/* Conctact Part */
+#contactPart p {
+    color: #B8B8B8;
+    font-size: 35px;
+    font-family: 'Indie Flower', cursive;
+}
+
+#contactPart span {
+    color: #E3E3E3;
+}
+
+#contactPart p:nth-child(1) {
+    font-size: 70px;
+    padding-bottom: 100px;
+}
+
+#contactPart p:nth-child(2) {
+    padding-bottom: 30px;
+}
+
+#contactPart p:nth-child(3) {
+    padding-bottom: 30px;
+}
+
+#contactPart span {
+    color: #E3E3E3;
+}
+
+
+/* Box Copyright */
+#copyrightText {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+}
+
+#copyrightText p {
+    color: #7a7a7a;
+    font-size: 25px;
+    font-family: 'Indie Flower', cursive;
+}
+
+#copyrightText a {
+    text-decoration: none;
+    color: #adadad;
+    transition: color 0.25s ease;
+}
+
+#copyrightText a:hover {
+    color: #ffffff;
+}
+
+
+/* Mobile Responsive */
+@media screen and (max-width: 1280px) { 
+    /* Lines Moving at the start of the page */
+    .lineAbout {
+        height: 3px;
+        width: 200px;
+    }
+
+
+    /* Box only with Text */
+    #boxOnlyText {
+        margin: 0 50px;
+    }
+    
+    #boxOnlyText p {
+        font-size: 30px;
+    }
+    
+    
+    /* Team Info Slider */
+    .swiperTeamSlides {
+        height: 410px;
+        margin: 370px 0;
+    }
+    
+    .swiperSlide {
+        height: 350px;
+        width: 250px;
+    }
+    
+    .swiperSlide:before {
+        height: 100px;
+        width: 100px;
+    }
+    
+    .swiperSlide p:nth-child(1) {
+        padding-top: 75px;
+        font-size: 30px;
+    }
+    
+    .swiperSlide p:nth-child(2) {
+        font-size: 40px;
+    }
+    
+    .svgFlex {
+        transform: translate(-50%, 0);
+        display: grid;
+        grid-gap: 15px;
+    }
+    
+    .svgFlex svg {
+        height: 20px;
+        width: 20px;
+    }
+
+
+    /* Conctact Part */
+    #contactPart p {
+        font-size: 25px;
+    }
+
+    #contactPart p:nth-child(1) {
+        font-size: 50px;
+    }
+    
+    #copyrightText {
+        font-size: 20px;
+    }
+}
+
+
+/* Animations */
+@keyframes moveRight {
+    from {
+        left: -60%;
+    }
+
+    to {
+        left: 140%;
+    }
+}
